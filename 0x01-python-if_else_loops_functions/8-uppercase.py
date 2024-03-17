@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
 def uppercase(str):
-    if str == "":
-        str = str + "\n"
-
     index = len(str)
+
+    if str == "":
+        index += 1
 
     for element in range(0, index):
 
