@@ -4,11 +4,11 @@ def uppercase(str):
     index = len(str)
 
     for element in range(0, index):
-        char_num = ord(str[element])
-
         if element == index:
             index += 1
             str += " "
+
+        char_num = ord(str[element])
 
         if (char_num >= 97 and char_num <= 122):
             char_num -= 32
