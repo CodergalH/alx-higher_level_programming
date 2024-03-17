@@ -5,8 +5,7 @@ def uppercase(str):
 
     for element in range(0, index):
         if index == 0:
-            index += 1
-            str = str.replace(str[element],'\n',1)
+            str = str.replace(str[0],"\n")
 
         char_num = ord(str[element])
 
