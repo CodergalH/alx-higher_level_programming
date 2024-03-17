@@ -5,7 +5,7 @@ def uppercase(str):
 
     for element in range(0, index):
         if index == 0:
-            str = str + " "
+            str = str + "\n"
 
         char_num = ord(str[element])
 
