@@ -5,6 +5,8 @@ def islower(c):
 
     if (num >= 97 and num <= 122):
         return True
-    else return False
+    else:
+        return False
+
 
 islower()
