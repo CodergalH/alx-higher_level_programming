@@ -16,5 +16,3 @@ def uppercase(str):
             char_num -= 32
 
         print("{:c}".format(char_num), end="")
-
-uppercase("holberton")
