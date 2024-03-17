@@ -3,10 +3,10 @@
 def uppercase(str):
     index = len(str)
 
-    for element in str:
-        char_num = ord(element)
+    for element in range(0, index):
+        char_num = ord(str[element])
 
-        if (element == str[index - 1]):
+        if (element == index - 1):
             if (char_num >= 97 and char_num <= 122):
                 char_num -= 32
             print("{:c}".format(char_num))
