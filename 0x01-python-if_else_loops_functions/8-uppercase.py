@@ -2,7 +2,7 @@
 
 def uppercase(str):
     if str == "":
-        str = str + " "
+        str = str + "\n"
 
     index = len(str)
 
