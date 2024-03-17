@@ -12,4 +12,4 @@ def uppercase(str):
         print("{:c}".format(char_num), end="")
 
         if (element == index - 1 or element == index):
-            print("")
+            print(" ")
