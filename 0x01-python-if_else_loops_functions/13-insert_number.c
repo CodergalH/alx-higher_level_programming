@@ -14,10 +14,11 @@ listint_t *insert_node(listint_t **head, int number)
 
 	listint_t *new_node
 		= malloc(sizeof(listint_t));
+	listint_t *prev = *head
 
 	new_node->n = number;
-	new_node->next = *head->next;
-	*head->next = new_node;
+	new_node->next = prev->next;
+	prev->next = new_node;
 
 	return(new_node)
 }
