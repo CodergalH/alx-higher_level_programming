@@ -3,6 +3,9 @@
 def uppercase(str):
     index = len(str)
 
+    if index <= 0:
+        break
+
     for element in range(0, index):
         char_num = ord(str[element])
 
