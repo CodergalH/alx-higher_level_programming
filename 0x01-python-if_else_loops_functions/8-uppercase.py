@@ -4,6 +4,8 @@ def uppercase(str):
     index = len(str)
 
     for element in range(0, index):
+        if str == "":
+            pass
 
         char_num = ord(str[element])
 
@@ -12,5 +14,5 @@ def uppercase(str):
 
         print("{:c}".format(char_num), end="")
 
-        if (element == index - 1 or element == index):
+        if (element == index - 1):
             print()
