@@ -21,11 +21,11 @@ listint_t *insert_node(listint_t **head, int number)
 	while (prev->next->n < number)
 		new_node = prev->next;
 
-	while (prev->n > number)
+	if (prev->n > number)
 	{
 		new_node->n = number;
 		new_node->next = prev;
-		prev->next = new_node;
+		prev = new_node;
 	}
 
 	if (prev == NULL)
