@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
 def uppercase(str):
+    if str == "":
+        str = str + " "
+
     index = len(str)
 
     for element in range(0, index):
-        if index == 0:
-            str = str + "\n"
 
         char_num = ord(str[element])
 
