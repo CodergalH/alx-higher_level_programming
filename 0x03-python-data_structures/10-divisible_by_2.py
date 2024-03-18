@@ -2,9 +2,5 @@
 def divisible_by_2(my_list=[]):
     newlist = []
     for i in range(len(my_list)):
-        if my_list[i] % 2 == 0:
-            newlist[i] = True
-        else:
-            newlist[i] = False
-
+        newlist[i] = my_list[i] % 2 == 0
     return newlist
