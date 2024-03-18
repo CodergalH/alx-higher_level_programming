@@ -6,4 +6,5 @@ def rev_alphabet():
 
         print("{:c}".format(i), end="")
 
+
 rev_alphabet()
