@@ -1,41 +1,31 @@
 #include "lists.h"
 
 /**
- * is_palindrome - check if list is empty
- * @head: first node
- *
- * Return: 0 if not, 1 if list is a palindrome
+ * is_palindrome - function to call check_pal to see if list is palindrome
+ * @head: ptr to the beginning of the list
+ * Return: 0 if not palindrome else 1
  */
-
 int is_palindrome(listint_t **head)
 {
-	listint_t *beginning;
-	int counter;
+	if (head == NULL || *head == NULL)
+		return (1);
+	return (check_pal(head, *head));
+}
 
-	beginning = *head;
-	counter = 0;
-	while (beginning != NULL)
+/**
+ * check_pal - function to check if the list is palindrome
+ * @head: ptr to the beginning of the list
+ * @last: ptr to the end of the list
+ * Return: 0 if not palindrom else 1
+ */
+int check_pal(listint_t **head, listint_t *last)
+{
+	if (last == NULL)
+		return (1);
+	if (check_pal(head, last->next) && (*head)->n == last->n)
 	{
-		beginning = beginning->next;
-		counter++;
+		*head = (*head)->next;
+		return (1);
 	}
-
-	int i = 0, j;
-	listint_t *front, *rear;
-
-	while (i != counter / 2)
-	{
-		front = rear = beginning;
-		for (j = 0; j < i; j++)
-			front = front->next;
-
-		for (j = 0; j < counter - (i + 1); j++)
-			rear = rear->next;
-
-		if (front->n != rear->n)
-			return (0);
-
-		i++;
-	}
-	return (1);
+	return (0);
 }
