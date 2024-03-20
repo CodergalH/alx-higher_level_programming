@@ -11,7 +11,7 @@ if __name__ == "__main__":
         for i in range(1, argn):
             print("{:d}: {}".format(i, cpy[i]))
     elif argn == 1:
-        print("arguements.")
+        print("arguments.")
     elif argn == 2:
         print("argument:")
         for i in range(1, argn):
