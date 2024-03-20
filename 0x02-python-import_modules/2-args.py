@@ -5,14 +5,16 @@ if __name__ == "__main__":
     cpy = sys.argv
     argn = len(cpy)
 
-    print("{:d} ".format(argn), end="")
-    if argn == 1:
-        print("argument:")
-        for i in range(argn):
-            print("{:d}: {}".format(i + 1, cpy[i]))
-    elif argn == 0:
-        print("arguements.")
-    else:
+    print("{:d} ".format(argn - 1), end="")
+    if argn > 2:
         print("arguments:")
-        for i in range(argn):
-            print("{:d}: {}".format(i + 1, cpy[i]))
+        for i in range(1, argn):
+            print("{:d}: {}".format(i, cpy[i]))
+    elif argn == 1:
+        print("arguements.")
+    elif argn == 2:
+        print("argument:")
+        for i in range(1, argn):
+            print("{:d}: {}".format(i, cpy[i]))
+    else:
+        print()
