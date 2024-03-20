@@ -4,12 +4,13 @@ if __name__ == "__main__":
 
     argn = len(argv)
 
-    if argn > 1:
-        print("{:d} arguements:".format(argn))
-    elif argn == 1:
-        print("{:d} argument:".format(argn))
+    print("{:d} ".format(argn), end="")
+    if argn == 1:
+        print("argument:")
+    elif argn == 0:
+        print("arguements.")
     else:
-        print("0 arguement.")
+        print("arguments:")
 
     for i in range(argn):
         print("{:d}: {}".format(i + 1, argv[i]))
