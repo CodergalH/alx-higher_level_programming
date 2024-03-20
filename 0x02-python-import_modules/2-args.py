@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import sys
+    from sys import argv
 
-    argn = len(sys.argv)
+    argn = len(argv)
 
     if argn > 1:
         print("{:d} arguements:".format(argn))
@@ -12,4 +12,4 @@ if __name__ == "__main__":
         print("0 arguement.")
 
     for i in range(argn):
-        print("{:d}: {}".format(i + 1, sys.argv[i]))
+        print("{:d}: {}".format(i + 1, argv[i]))
