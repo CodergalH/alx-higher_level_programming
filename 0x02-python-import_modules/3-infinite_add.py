@@ -6,9 +6,9 @@ if __name__ == "__main__":
     result = 0
     if argn > 2:
         for i in range(1, argn):
-            result += int(argn[i])
+            result += int(sys.argv[i])
     elif argn == 2:
-        result = int(argn[1])
+        result = int(sys. argv[1])
     else:
         result = 0
 
