@@ -2,7 +2,7 @@
 if __name__ == "__main__":
     import sys
 
-    cpy = sys.argv
+    cpy = argv
     argn = len(cpy)
 
     print("{:d} ".format(argn - 1), end="")
