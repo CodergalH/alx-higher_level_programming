@@ -1,5 +1,4 @@
 def magic_calculation(a, b):
-    """Calculates on numbers."""
     from magic_calculation_102 import add, sub
 
     if a < b:
