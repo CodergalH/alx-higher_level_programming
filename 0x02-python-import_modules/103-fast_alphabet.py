@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 print(alphabets)
