@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""This  functionperforms calcs."""
+
+
+
 def magic_calculation(a, b):
     """Calculates."""
     from magic_calculation_102 import add, sub
