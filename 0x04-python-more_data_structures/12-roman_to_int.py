@@ -4,6 +4,7 @@ def roman_to_int(roman_string):
 
     if isinstance(roman_string, str):
         str_list = list(roman_string)
+        num = 0
 
         for i in range(len(str_list)):
             place = romanum[str_list[i]]
