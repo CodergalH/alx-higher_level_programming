@@ -9,7 +9,7 @@ def roman_to_int(roman_string):
         for i in range(len(str_list)):
             place = romanum[str_list[i]]
 
-            if i + 1 <= len(str_list) - 1:
+            if i + 1 < len(str_list) - 1 or i + 1 == len(str_list) - 1:
                 nextp = romanum[str_list[i + 1]]
 
                 if place < nextp:
