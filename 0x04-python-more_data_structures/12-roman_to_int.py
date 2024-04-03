@@ -5,11 +5,13 @@ def roman_to_int(roman_string):
     if isinstance(roman_string, str):
         str_list = list(roman_string)
         num = 0
+        lenght = len(str_list) - 1
 
-        for i in range(len(str_list)):
+        for i in range(lenght - 1):
             place = romanum[str_list[i]]
+            next = i + 1
 
-            if (i + 1 < len(str_list) - 1) or (i + 1 == len(str_list) - 1):
+            if (next < lenght) or (next == lenght):
                 nextp = romanum[str_list[i + 1]]
 
                 if place < nextp:
