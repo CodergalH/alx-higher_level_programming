@@ -14,8 +14,7 @@ def roman_to_int(roman_string):
             if (next <= lenght):
                 nextp = romanum[str_list[next]]
                 if place < nextp:
-                    place = nextp - place
-                    i += 2
+                    place *= -1
 
             num += place
 
