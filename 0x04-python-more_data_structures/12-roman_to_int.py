@@ -10,11 +10,10 @@ def roman_to_int(roman_string):
         for i in range(lenght + 1):
             place = romanum[str_list[i]]
             next = i + 1
-            nextp
 
             if (next < lenght) or (next == lenght):
+                nextp = romanum[str_list[next]]
                 if place < nextp:
-                    nextp = romanum[str_list[next]]
                     place = nextp - place
                     i += 1
 
