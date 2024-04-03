@@ -7,7 +7,7 @@ def roman_to_int(roman_string):
         num = 0
         lenght = len(str_list) - 1
 
-        for i in range(lenght - 1):
+        for i in range(lenght):
             place = romanum[str_list[i]]
             next = i + 1
             nextp = romanum[str_list[next]]
