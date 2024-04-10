@@ -50,7 +50,7 @@ void print_python_list(PyObject *p)
 {
     int i;
     Py_ssize_t size = PyList_GET_SIZE(p);
-    const char* type;
+    char type;
 
     printf("[*] Python list info");
     printf("[*] size of the Python list = %lu\n", size);
@@ -60,7 +60,7 @@ void print_python_list(PyObject *p)
 		printf("Element %d: ", i);
 
     type = ((PyListObject *)p)->ob_item[i]->ob_type;
-    if (*type == 'bytes')
+    if (type == 'bytes')
         print_python_bytes(((PyListObject *)p)->ob_item[i]);
     else
         printf("%s\n", type);
