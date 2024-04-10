@@ -60,11 +60,10 @@ void print_python_list(PyObject *p)
 		printf("Element %d: ", i);
 
     type = ((PyListObject *)p)->ob_item[i]->ob_type->tp_name;
-    if (type == 'bytes')
+    if (*type == 'bytes')
         print_python_bytes(((PyListObject *)p)->ob_item[i]);
     else
         printf("%s\n", type);
 
     printf("\n");
-
 }
