@@ -1,0 +1,14 @@
+[.] bytes object info
+  size: 5
+  trying string: Hello
+  first 6 bytes: 48 65 6c 6c 6f 00
+
+
+[*] Python list info
+[*] Size of the Python List = 1
+[*] Allocated = 2
+Element 0: bytes
+[.] bytes object info
+  size: 5
+  trying string: Hello
+  first 6 bytes: 48 65 6c 6c 6f 00
