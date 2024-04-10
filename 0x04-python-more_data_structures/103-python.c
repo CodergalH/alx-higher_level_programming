@@ -57,13 +57,12 @@ void print_python_list(PyObject *p)
     printf("[*] Allocated = %lu\n", ((PyListObject *)p)->allocated);
 
     for (i = 0; i < ((PyVarObject *)p)->ob_size; i++)
-		printf("Element %d: ", i);
-
-    type = ((PyListObject *)p)->ob_item[i]->ob_type->tp_name;
-    if (*type == 'bytes')
-        print_python_bytes(((PyListObject *)p)->ob_item[i]);
-    else
-        printf("%s\n", type);
+	{
+        printf("Element %d: %s\n", i,
+			((PyListObject *)p)->ob_item[i]->ob_type->tp_name);
+		if (!strcmp(((PyListObject *)p)->ob_item[i]->ob_type->tp_name, "bytes"))
+			print_python_bytes(((PyListObject *)p)->ob_item[i]);
+    }
 
     printf("\n");
 }
