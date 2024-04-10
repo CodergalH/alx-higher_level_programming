@@ -22,7 +22,7 @@ void print_python_bytes(PyObject *p)
 	}
     printf("  size: %lu\n", ((PyVarObject *)p)->ob_size);
     str = ((PyBytesObject *)p)->ob_sval;
-    printf("  trying string:%s\n", str);
+    printf("  trying string: %s\n", str);
 
     len = strlen(str);
 
