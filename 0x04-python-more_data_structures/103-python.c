@@ -37,7 +37,6 @@ void print_python_bytes(PyObject *p)
             printf("%02hhx", str[i]);
     }
     printf("\n");
-
 }
 
 
