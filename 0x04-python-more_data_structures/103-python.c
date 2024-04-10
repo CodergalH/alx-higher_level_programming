@@ -6,6 +6,8 @@
  * print_python_bytes - prints info about python lists
  * @p: address of pyobject struct
  */
+void print_python_list(PyObject *p);
+void print_python_bytes(PyObject *p);
 
 void print_python_bytes(PyObject *p)
 {
@@ -44,7 +46,7 @@ void print_python_bytes(PyObject *p)
  * print_python_list - prints info about python lists
  * @p: address of pyobject struct
  */
-void print_python_bytes(PyObject *p)
+void print_python_list(PyObject *p)
 {
     int i;
     Py_ssize_t size = PyList_GET_SIZE(p);
