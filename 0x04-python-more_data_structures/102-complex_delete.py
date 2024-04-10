@@ -6,5 +6,5 @@ def complex_delete(a_dictionary, value):
     for i in alist:
         if a_dictionary2[i] == value:
             a_dictionary2.pop(i)
-        
+
     return a_dictionary2
