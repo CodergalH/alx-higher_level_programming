@@ -2,32 +2,50 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * print_python_bytes - prints info about python lists
+ * @p: address of pyobject struct
+ */
+
 void print_python_bytes(PyObject *p)
 {
-    char str = p;
-    printf("[.] bytes object info\n");
-    printf("  size: %lu\n", ((PyVarObject *)p)->ob_size);
-    printf("  trying string: %s", str);
+    size_t i, len;
+    char *str;
 
-    Py_ssize_t len = strlen(p);
+    printf("[.] bytes object info\n");
+    if (strcmp(p->ob_type->tp_name, "bytes"))
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
+    printf("  size: %lu\n", ((PyVarObject *)p)->ob_size);
+    str = ((PyBytesObject *)p)->ob_sval;
+    printf("  trying string: %s\n", str);
+
+    len = strlen(str);
 
     if(len > 0 && len <= 9)
     {
         printf("  first %lu bytes: ", len + 1);
-        for (int i=0; i < len + 1; i++)
+        for (i = 0; i < len + 1; i++)
             printf("%02hhx ", p[i]);
     }
     else if(len >= 10)
     {
         printf("  first %d bytes: ", 10);
         for (int i=0; i < 10; i++)
-            printf("%02hhx ", p[i]);
+            printf("%02hhx", str[i]);
     }
     printf("\n");
 
     return (0);
 }
 
+
+/**
+ * print_python_list - prints info about python lists
+ * @p: address of pyobject struct
+ */
 void print_python_bytes(PyObject *p)
 {
     int i;
