@@ -58,12 +58,12 @@ void print_python_list(PyObject *p)
     for (i = 0; i < ((PyVarObject *)p)->ob_size; i++)
 		printf("Element %d: ", i);
 
-    int type = Py_IS_TYPE(((PyListObject *)p)->ob_item[i], 'bytes');
+    char *type = ((PyListObject *)p)->ob_item[i]->ob_type->tp_name;
     
-    if (type == 1)
+    if (type == "bytes")
         print_python_bytes(((PyListObject *)p)->ob_item[i]);
     else
-        printf("%s\n", ((PyTypeObject *)p)->tp_name);
+        printf("%s\n", type);
 
     printf("\n");
 
