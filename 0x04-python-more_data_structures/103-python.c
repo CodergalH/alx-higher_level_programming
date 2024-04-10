@@ -28,7 +28,7 @@ void print_python_bytes(PyObject *p)
     {
         printf("  first %lu bytes: ", len + 1);
         for (i = 0; i < len + 1; i++)
-            printf("%02hhx ", p[i]);
+            printf("%02hhx ", str[i]);
     }
     else if(len >= 10)
     {
