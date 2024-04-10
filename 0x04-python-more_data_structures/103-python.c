@@ -4,15 +4,16 @@
 
 void print_python_bytes(PyObject *p)
 {
+    char *str = p;
     printf("[.] bytes object info\n");
     printf("  size: %lu\n", ((PyVarObject *)p)->ob_size);
-    printf("  trying string: %s", p);
+    printf("  trying string: %s", str);
 
-    int len = strlen(p);
+    Py_ssize_t len = strlen(p);
 
     if(len > 0 && len <= 9)
     {
-        printf("  first %d bytes: ", len + 1);
+        printf("  first %lu bytes: ", len + 1);
         for (int i=0; i < len + 1; i++)
             printf("%02hhx ", p[i]);
     }
