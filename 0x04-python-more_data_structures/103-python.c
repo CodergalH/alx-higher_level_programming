@@ -28,13 +28,13 @@ void print_python_bytes(PyObject *p)
 
     if(len > 0 && len <= 9)
     {
-        printf("  first %lu bytes: ", len + 1);
+        printf("  first %lu bytes:", len + 1);
         for (i = 0; i < len + 1; i++)
             printf(" %02hhx", str[i]);
     }
     else if(len >= 10)
     {
-        printf("  first %d bytes: ", 10);
+        printf("  first %d bytes:", 10);
         for (int i=0; i < 10; i++)
             printf(" %02hhx", str[i]);
     }
