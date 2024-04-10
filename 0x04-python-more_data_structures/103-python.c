@@ -4,7 +4,7 @@
 
 void print_python_bytes(PyObject *p)
 {
-    char *str = p;
+    char str = p;
     printf("[.] bytes object info\n");
     printf("  size: %lu\n", ((PyVarObject *)p)->ob_size);
     printf("  trying string: %s", str);
