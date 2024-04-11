@@ -8,4 +8,4 @@ def safe_print_list(my_list=[], x=0):
         print(end='\n')  # Add a newline
     except IndexError:
         pass
-    return ret + 1
+    return ret
