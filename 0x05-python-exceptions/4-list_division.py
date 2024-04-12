@@ -6,7 +6,7 @@ def list_division(my_list_1, my_list_2, list_length):
             try:
                 result = my_list_1[i] / my_list_2[i]
             except ZeroDivisionError:
-                print("division by zero", end="\n")
+                print("division by 0", end="\n")
                 result = 0
             except IndexError:
                 print("out of range", end="\n")
@@ -14,7 +14,7 @@ def list_division(my_list_1, my_list_2, list_length):
             except TypeError:
                 print("wrong type", end="\n")
                 result = 0
-            finally:
+            finally :
                 new_list.append(result)
     except SyntaxError:
         pass
