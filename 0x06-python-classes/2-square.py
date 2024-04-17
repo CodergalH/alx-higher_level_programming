@@ -12,7 +12,7 @@ class Square(object):
     def __init__(self, size=0):
         """Initialize the square with given size."""
         if not isinstance(size, int):
-            raise TypeError("Size must be an integer")
+            raise TypeError("size must be an integer")
         if size < 0:
-            raise ValueError("Size must be >= zero")
+            raise ValueError("size must be >= zero")
         self._Square__size = size
