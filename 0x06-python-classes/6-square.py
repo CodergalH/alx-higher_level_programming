@@ -5,10 +5,6 @@ Purpose: Define a Square class
 """
 
 
-from textwrap import indent
-from turtle import pos, position
-
-
 class Square(object):
     """ A class represents / defines a square.
     """
