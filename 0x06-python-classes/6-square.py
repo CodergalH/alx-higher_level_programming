@@ -13,9 +13,22 @@ class Square(object):
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with given size."""
         self._Square__size = size
-        if not isinstance(position, tuple):
+        if isinstance(position, tuple):
+            for a in position:
+                index += 1
+
+            if index > 2 or index <= 0:
+                raise TypeError("position must be a tuple of 2 positive integers")
+
+            for i in range(2):
+                if not isinstance(position[i], int):
+                    raise TypeError("position must be a tuple of 2 positive integers")
+                elif position[i] < 0:
+                    raise TypeError("position must be a tuple of 2 positive integers")
+
+            self._Square__position = position
+        else:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self._Square__position = position
 
     @property
     def size(self):
