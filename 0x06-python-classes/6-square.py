@@ -12,6 +12,7 @@ from turtle import pos, position
 class Square(object):
     """ A class represents / defines a square.
     """
+    index = 0
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with given size."""
@@ -45,14 +46,13 @@ class Square(object):
     @position.setter
     def position(self, value):
         if isinstance(value, tuple):
-            index = 0
-            for a in self._Square__position:
+            for a in value:
                 index += 1
 
-            if index > 2 or index < 0:
+            if index > 2 or index <= 0:
                 raise TypeError("position must be a tuple of 2 positive integers")
 
-            for index:
+            for i in range(2):
                 if not isinstance(value[i], int):
                     raise TypeError("position must be a tuple of 2 positive integers")
                 elif value[i] < 0:
