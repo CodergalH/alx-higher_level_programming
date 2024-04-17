@@ -5,7 +5,7 @@ Purpose: Define a Square class
 """
 
 
-from turtle import pos
+from turtle import pos, position
 
 
 class Square(object):
@@ -14,14 +14,11 @@ class Square(object):
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with given size."""
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
         self._Square__size = size
+        self._Square__position = position
 
-        if not isinstance(position, tuple):
-            raise TypeError("position must be a tuple of 2 positive integers")
+    def __len__(self):
+        return len(self._Square__position)
 
     @property
     def size(self):
@@ -37,6 +34,26 @@ class Square(object):
             raise ValueError("size must be >= 0")
         self._Square__size = value
 
+    @property
+    def position(self):
+        """Gets the position of spaces on square"""
+    
+    @position.setter
+    def position(self, value):
+        if isinstance(value, tuple):
+            if len(value) > 2:
+                raise TypeError("position must be a tuple of 2 positive integers")
+
+            for i in range(2):
+                if not isinstance(value[i], int):
+                    raise TypeError("position must be a tuple of 2 positive integers")
+                elif value[i] < 0:
+                    raise TypeError("position must be a tuple of 2 positive integers")
+
+            self._Square__position = value
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
+
     def area(self):
         """
         Calculate and return the area of the square.
@@ -46,10 +63,12 @@ class Square(object):
 
     def my_print(self):
         """prints in stdout the square with the character #
-        if size is equal to 0, prints an empty line
+        position should be use by using space
         """
         if self._Square__size == 0:
             print(end="\n")
 
         for i in range(self._Square__size):
+            if self._Square__position[1] > 0:
+                print("_" * self._Square__position[0])
             print("#" * self._Square__size, end="\n")
