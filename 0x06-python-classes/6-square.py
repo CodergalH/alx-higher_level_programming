@@ -8,12 +8,12 @@ Purpose: Define a Square class
 class Square(object):
     """ A class represents / defines a square.
     """
-    index = 0
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with given size."""
         self._Square__size = size
         if isinstance(position, tuple):
+            index = 0
             for a in position:
                 index += 1
 
