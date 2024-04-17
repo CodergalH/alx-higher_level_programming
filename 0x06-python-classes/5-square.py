@@ -46,4 +46,4 @@ class Square(object):
             print(end="\n")
 
         for i in range(self._Square__size):
-            print("#" * self._Square__size, end="")
+            print("#" * self._Square__size, end="\n")
