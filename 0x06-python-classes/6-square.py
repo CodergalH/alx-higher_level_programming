@@ -19,12 +19,6 @@ class Square(object):
         self._Square__size = size
         self._Square__position = position
 
-    # def __len__(self):
-    #     index = 0
-    #     for a in self._Square__position:
-    #         index += 1
-    #     return index
-
     @property
     def size(self):
         """Gets the size of the square."""
