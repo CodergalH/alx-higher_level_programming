@@ -5,13 +5,23 @@ Purpose: Define a Square class
 """
 
 
+from turtle import pos
+
+
 class Square(object):
     """ A class represents / defines a square.
     """
 
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with given size."""
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         self._Square__size = size
+
+        if not isinstance(position, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     @property
     def size(self):
