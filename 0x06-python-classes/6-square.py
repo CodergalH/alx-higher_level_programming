@@ -5,6 +5,9 @@ Purpose: Define a Square class
 """
 
 
+from turtle import pos
+
+
 class Square(object):
     """ A class represents / defines a square.
     """
@@ -13,6 +16,8 @@ class Square(object):
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with given size."""
         self._Square__size = size
+        if not isinstance(position, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self._Square__position = position
 
     @property
