@@ -5,9 +5,6 @@ Purpose: Define a Square class
 """
 
 
-from turtle import pos
-
-
 class Square(object):
     """ A class represents / defines a square.
     """
