@@ -49,10 +49,10 @@ class Square(object):
             for a in self._Square__position:
                 index += 1
 
-            if index > 2:
+            if index > 2 or index < 0:
                 raise TypeError("position must be a tuple of 2 positive integers")
 
-            for i in range(2):
+            for index:
                 if not isinstance(value[i], int):
                     raise TypeError("position must be a tuple of 2 positive integers")
                 elif value[i] < 0:
