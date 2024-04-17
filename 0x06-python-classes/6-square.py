@@ -36,6 +36,7 @@ class Square(object):
     @property
     def position(self):
         """Gets the position of spaces on square"""
+        return self._Square__position
     
     @position.setter
     def position(self, value):
