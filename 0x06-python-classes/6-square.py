@@ -67,11 +67,11 @@ class Square(object):
         if self._Square__size == 0:
             print()
 
-        for y in range(self._Square__position[1]):
+        for y in range(0, self._Square__position[1]):
             print()
 
         for i in range(self._Square__size):
-            for x in range(self._Square__position[0]):
+            for x in range(0, self._Square__position[0]):
                 print(" ", end="")
             print("#" * self._Square__size, end="\n")  
             print()
