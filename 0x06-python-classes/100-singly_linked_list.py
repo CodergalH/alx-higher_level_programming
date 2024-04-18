@@ -25,12 +25,12 @@ class Node:
         """
         Initializes a new instance of the Node class.
         """
-        if not isinstance(value, int):
+        if not isinstance(data, int):
             raise TypeError("data must be an integer")
         else:
             self.__data = data
 
-        if value is not None and not isinstance(value, Node):
+        if next_node is not None and not isinstance(next_node, Node):
             raise TypeError("next_node must be a Node object")
         else:
             self.__next_node = next_node
