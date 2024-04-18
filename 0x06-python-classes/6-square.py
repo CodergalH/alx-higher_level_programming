@@ -79,13 +79,12 @@ class Square(object):
 
     def my_print(self):
         """prints in stdout the square with the character #
-        position should be use by using space
         """
         if self._Square__size == 0:
             print()
 
         if self._Square__position[1] != 0:
-            print(" " * self._Square__position[1])
+            print(" " * self._Square__position[1], end="")
 
         for i in range(self._Square__size):
             for x in range(0,self._Square__position[0]):
