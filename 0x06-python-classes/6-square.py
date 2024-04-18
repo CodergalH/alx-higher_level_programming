@@ -11,13 +11,18 @@ class Square(object):
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with given size."""
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         self._Square__size = size
+
         if isinstance(position, tuple):
             index = 0
             for a in position:
                 index += 1
 
-            if index > 2 or index <= 0:
+            if index > 2 or index < 2:
                 raise TypeError("position must be a tuple of 2 positive integers")
 
             for i in range(2):
