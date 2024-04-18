@@ -12,7 +12,24 @@ class Square(object):
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the square with given size."""
         self._Square__size = size
-        self._Square__position = position
+
+        if isinstance(position, tuple):
+            index = 0
+            for a in position:
+                index += 1
+
+            if index > 2 or index <= 0:
+                raise TypeError("position must be a tuple of 2 positive integers")
+
+            for i in range(2):
+                if not isinstance(position[i], int):
+                    raise TypeError("position must be a tuple of 2 positive integers")
+                elif position[i] < 0:
+                    raise TypeError("position must be a tuple of 2 positive integers")
+
+            self._Square__position = position
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     @property
     def size(self):
@@ -29,12 +46,12 @@ class Square(object):
         self._Square__size = value
 
     @property
-    def Square__position(self):
+    def position(self):
         """Gets the position of spaces on square"""
         return self._Square__position
     
-    @Square__position.setter
-    def Square__position(self, value):
+    @position.setter
+    def position(self, value):
         if isinstance(value, tuple):
             index = 0
             for a in value:
@@ -67,11 +84,11 @@ class Square(object):
         if self._Square__size == 0:
             print()
 
-        for y in range(0, self._Square__position[1]):
+        for y in range(self._Square__position[1]):
             print()
 
         for i in range(self._Square__size):
-            for x in range(0, self._Square__position[0]):
+            for x in range(0,self._Square__position[0]):
                 print(" ", end="")
             print("#" * self._Square__size, end="\n")  
             print()
