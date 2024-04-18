@@ -88,4 +88,3 @@ class Square(object):
             for x in range(0,self._Square__position[0]):
                 print(" ", end="")
             print("#" * self._Square__size, end="\n")  
-            print()
