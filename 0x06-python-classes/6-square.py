@@ -18,7 +18,7 @@ class Square(object):
             for a in position:
                 index += 1
 
-            if index > 2 or index <= 0:
+            if index > 2 or index < 2:
                 raise TypeError("position must be a tuple of 2 positive integers")
 
             for i in range(2):
@@ -57,7 +57,7 @@ class Square(object):
             for a in value:
                 index += 1
 
-            if index > 2 or index <= 0:
+            if index > 2 or index < 2:
                 raise TypeError("position must be a tuple of 2 positive integers")
 
             for i in range(2):
@@ -84,7 +84,7 @@ class Square(object):
         if self._Square__size == 0:
             print()
 
-        for y in range(self._Square__position[1]):
+        for y in range(0, self._Square__position[1]):
             print()
 
         for i in range(self._Square__size):
