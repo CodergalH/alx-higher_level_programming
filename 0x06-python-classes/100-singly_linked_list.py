@@ -5,6 +5,9 @@ Purpose: Define a singly linked lista and its node class
 """
 
 
+from locale import currency
+
+
 class Node:
     """
     A class representing/defining a node in the linked list.
@@ -25,7 +28,7 @@ class Node:
         """
         Initializes a new instance of the Node class.
         """
-        if not isinstance(data, int):
+        if type(data) is not int:
             raise TypeError("data must be an integer")
         else:
             self.__data = data
@@ -41,7 +44,7 @@ class Node:
     
     @data.setter
     def data(self, value):
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("data must be an integer")
         else:
             self.__data = value
@@ -49,10 +52,10 @@ class Node:
     @property
     def next_node(self):
         return self.__next_node
+
     @next_node.setter
     def next_node(self, value):
-        # Allows None as argument for last element in the Linked List
-        if value is not None and not isinstance(value, Node):
+        if value is not None and type(value) is not Node:
             raise TypeError("next_node must be a Node object")
         else:
             self.__next_node = value
@@ -80,16 +83,18 @@ class SinglyLinkedList:
         :param value: The integer that will be added to the list.
         :type value: int
         """
-        if self.__head is None:
-            self.__head = Node(value)
+        new_node = Node(value)
+        if self.__head == None:
+            self.__head = new_node
         else:
-            new_node = Node(value)
-            tmp = self.__head
-            while tmp is not None:
-                if tmp.__next_node is None:
-                    tmp.__next_node = new_node
-                    new_node.__next_node = None
-                if new_node.__data < tmp.__next_node.__data:
-                    new_node.__next_node = tmp.__next_node
-                    tmp.__next_node = new_node
-                tmp = tmp.__next_node
+            current = self.__head
+            while current.next_node is not None:
+                current = current.next_node
+            current.next_node = new_node
+
+    def __str__(self):
+        current = self.__head
+        while current:
+            print(current.data)
+            current = current.next_node
+        return ''
