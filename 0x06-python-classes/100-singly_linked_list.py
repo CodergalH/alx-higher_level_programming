@@ -94,4 +94,4 @@ class SinglyLinkedList:
         while current:
             print(current.data)
             current = current.next_node
-        return ''
+        return
