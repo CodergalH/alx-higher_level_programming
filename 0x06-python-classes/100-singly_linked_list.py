@@ -98,7 +98,6 @@ class SinglyLinkedList:
                 elif new_node.data < prev.next_node.data:
                     new_node.next_node = prev.next_node
                     prev.next_node = new_node
-
                 prev = prev.next_node
             self.__head = prev
 
