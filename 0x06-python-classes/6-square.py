@@ -92,4 +92,4 @@ class Square(object):
                 print(" " * self._Square__position[0], end="")
             print("#" * self._Square__size, end="\n")
         if self._Square__position[1] > 0:
-            print(" " * self._Square__position[i], end="")
+            print(" " * self._Square__position[1], end="")
