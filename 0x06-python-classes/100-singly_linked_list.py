@@ -25,8 +25,15 @@ class Node:
         """
         Initializes a new instance of the Node class.
         """
-        self.__data = data
-        self.__next_node = next_node
+        if not isinstance(value, int):
+            raise TypeError("data must be an integer")
+        else:
+            self.__data = data
+
+        if value is not None and not isinstance(value, Node):
+            raise TypeError("next_node must be a Node object")
+        else:
+            self.__next_node = next_node
 
     @property
     def data(self):
@@ -47,7 +54,8 @@ class Node:
         # Allows None as argument for last element in the Linked List
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
-        self.__next_node = value
+        else:
+            self.__next_node = value
 
 class SinglyLinkedList:
     """
