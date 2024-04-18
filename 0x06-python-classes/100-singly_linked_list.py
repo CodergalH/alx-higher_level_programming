@@ -95,17 +95,15 @@ class SinglyLinkedList:
                 else:
                     prev.next_node = new_node
             else:
-                while prev.next_node is not None and \
-                      prev.next_node.data < new_node.data:
+                while prev.next_node.data > prev.data:
+                    prev.data  = prev.next_node.data
                     prev = prev.next_node
-
-                if prev.next_node is None or \
-                   prev.next_node.data > new_node.data:
-                    new_node.next_node = prev.next_node
-                    prev.next_node = new_node
-                else:
-                    new_node.next_node = prev
-        # update head of linked list if necessary
+                    if prev.data > new_node.data:
+                        new_node.next_node = prev
+                        prev.next_node = new_node
+                    else:
+                        prev.next_node = new_node
+        
         self.__head = prev
 
 
