@@ -15,21 +15,23 @@ class Square(object):
 
         if isinstance(position, tuple):
             index = 0
+            str = "position must be a tuple of 2 positive integers"
             for a in position:
                 index += 1
 
             if index > 2 or index < 2:
-                raise TypeError("position must be a tuple of 2 positive integers")
+                raise TypeError(str)
 
             for i in range(2):
                 if not isinstance(position[i], int):
-                    raise TypeError("position must be a tuple of 2 positive integers")
+                    raise TypeError(str)
                 elif position[i] < 0:
-                    raise TypeError("position must be a tuple of 2 positive integers")
+                    raise TypeError(str)
 
             self._Square__position = position
         else:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            str = "position must be a tuple of 2 positive integers"
+            raise TypeError(str)
 
     @property
     def size(self):
@@ -54,21 +56,23 @@ class Square(object):
     def position(self, value):
         if isinstance(value, tuple):
             index = 0
+            str = "position must be a tuple of 2 positive integers"
             for a in value:
                 index += 1
 
             if index > 2 or index < 2:
-                raise TypeError("position must be a tuple of 2 positive integers")
+                raise TypeError(str)
 
             for i in range(2):
                 if not isinstance(value[i], int):
-                    raise TypeError("position must be a tuple of 2 positive integers")
+                    raise TypeError(str)
                 elif value[i] < 0:
-                    raise TypeError("position must be a tuple of 2 positive integers")
+                    raise TypeError(str)
 
             self._Square__position = value
         else:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            str = "position must be a tuple of 2 positive integers"
+            raise TypeError(str)
 
     def area(self):
         """
@@ -92,4 +96,4 @@ class Square(object):
             for i in range(self._Square__size):
                 for x in range(self._Square__position[0]):
                     print(" ", end="")
-                print("#" * self._Square__size, end="\n")  
+                print("#" * self._Square__size, end="\n")
