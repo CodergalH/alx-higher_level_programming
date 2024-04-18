@@ -29,11 +29,11 @@ class Node:
         self.__next_node = next_node
 
     @property
-    def __data(self):
+    def data(self):
         return self.__data
     
-    @__data.setter
-    def __data(self, value):
+    @data.setter
+    def data(self, value):
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         else:
