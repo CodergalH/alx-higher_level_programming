@@ -78,11 +78,6 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """
-        Adds a new node at the correct position to keep the list sorted.
-        If the linked list is empty, adds it as the first element.
-        Otherwise, iterates through the elements until finds the right place  
-        to insert the new value.
-        
         :param value: The integer that will be added to the list.
         :type value: int
         """
@@ -90,15 +85,29 @@ class SinglyLinkedList:
 
         new_node = Node(value)
         prev = self.__head
-        if prev is None or prev.data <= value:
-            new_node.next_node = prev
+        if prev is None:
             prev = new_node
-        
-        while prev and prev.next_node and prev.next_node.data < value:
-            prev = prev.next_node
+        else:
+            if prev.next_node is None:
+                if prev.data > new_node.data:
+                    new_node.next_node = prev
+                    prev = new_node
+                else:
+                    prev.next_node = new_node
+            else:
+                while prev.next_node is not None and \
+                      prev.next_node.data < new_node.data:
+                    prev = prev.next_node
 
-        new_node.next_node = prev.next_node
-        prev.next_node = new_node
+                if prev.next_node is None or \
+                   prev.next_node.data > new_node.data:
+                    new_node.next_node = prev.next_node
+                    prev.next_node = new_node
+                else:
+                    new_node.next_node = prev
+        # update head of linked list if necessary
+        self.__head = prev
+
 
     def __str__(self):
         current = self.__head
