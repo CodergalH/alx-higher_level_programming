@@ -78,19 +78,20 @@ class Square(object):
         Calculate and return the area of the square.
         :return: The area of the square as an integer.
         """
-        return self._Square__size * self._Square__size
+        return self._Square__size ** 2
 
     def my_print(self):
         """prints in stdout the square with the character #
         position should be use by using space
         """
         if self._Square__size == 0:
-            print(end="\n")
+            print()
 
-        if self._Square__position[1] > 0:
-            print(" " * self._Square__position[1], end="")
+        for y in range(self._Square__position[1]):
+            print()
 
         for i in range(self._Square__size):
-            if self._Square__position[1] == 0:
-                print(" " * self._Square__position[0], end="")
+            for x in range(self._Square__position[0]):
+                print(" ", end="")
             print("#" * self._Square__size, end="\n")  
+            print()
