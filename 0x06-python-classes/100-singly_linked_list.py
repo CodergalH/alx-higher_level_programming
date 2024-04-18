@@ -100,6 +100,9 @@ class SinglyLinkedList:
     def __str__(self):
         current = self.__head
         while current:
-            print(current.data)
+            if current.__next_node is None:
+                print(current.data, end="")
+            else:
+                print(current.data)
             current = current.next_node
         return ''
