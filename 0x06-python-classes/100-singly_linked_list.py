@@ -97,10 +97,11 @@ class SinglyLinkedList:
                 if current.next_node is None:
                     current.next_node = new_node
                     new_node.next_node = None
-                elif new_node.data < current.next_node.data:
-                    new_node.next_node = current.next_node
-                    current.next_node = new_node
-                current = current.next_node
+                else:
+                    if new_node.data > current.next_node.data:
+                        new_node.next_node = current.next_node
+                        current.next_node = new_node
+                    current = current.next_node
 
     def __str__(self):
         current = self.__head
