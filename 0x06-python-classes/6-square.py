@@ -49,7 +49,7 @@ class Square(object):
     def position(self):
         """Gets the position of spaces on square"""
         return self._Square__position
-    
+
     @position.setter
     def position(self, value):
         if isinstance(value, tuple):
@@ -85,6 +85,7 @@ class Square(object):
         else:
             if self._Square__position[1] != 0:
                 print(" " * self._Square__position[1], end="")
+            print(end='')
 
             for i in range(self._Square__size):
                 for x in range(self._Square__position[0]):
