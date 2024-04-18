@@ -87,9 +87,10 @@ class Square(object):
         if self._Square__size == 0:
             print(end="\n")
 
+        if self._Square__position[1] > 0:
+            print(" " * self._Square__position[1], end="")
+
         for i in range(self._Square__size):
             if self._Square__position[1] == 0:
                 print(" " * self._Square__position[0], end="")
-            print("#" * self._Square__size, end="\n")
-        if self._Square__position[1] > 0:
-            print(" " * self._Square__position[1], end="")
+            print("#" * self._Square__size, end="\n")  
