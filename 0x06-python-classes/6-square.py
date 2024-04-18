@@ -84,7 +84,7 @@ class Square(object):
             print()
         else:
             if self._Square__position[1] != 0:
-                print(" " * self._Square__position[1] - 1 + "\n")
+                print(" " * (self._Square__position[1] - 1) + "\n")
 
             for i in range(self._Square__size):
                 for x in range(self._Square__position[0]):
