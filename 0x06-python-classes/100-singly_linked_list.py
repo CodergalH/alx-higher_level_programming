@@ -112,9 +112,6 @@ class SinglyLinkedList:
     def __str__(self):
         current = self.__head
         while current:
-            if current.next_node is None:
-                print(current.data, end="")
-            else:
-                print(current.data)
+            print(current.data)
             current = current.next_node
         return ''
