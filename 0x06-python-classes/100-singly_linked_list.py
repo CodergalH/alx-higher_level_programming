@@ -5,9 +5,6 @@ Purpose: Define a singly linked lista and its node class
 """
 
 
-from locale import currency
-
-
 class Node:
     """
     A class representing/defining a node in the linked list.
