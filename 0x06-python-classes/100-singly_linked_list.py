@@ -29,10 +29,11 @@ class Node:
         self.__next_node = next_node
 
     @property
-    def data(self):
+    def __data(self):
         return self.__data
-    @data.setter
-    def data(self, value):
+    
+    @__data.setter
+    def __data(self, value):
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         else:
@@ -59,7 +60,7 @@ class SinglyLinkedList:
     """
 
     def __init__(self):
-        self.head = None
+        self.__head = None
     
     def __str__(self):
         return self
