@@ -34,7 +34,7 @@ class Node:
     @data.setter
     def data(self, value):
         if not isinstance(value, int):
-            raise ValueError("data must be an integer")
+            raise TypeError("data must be an integer")
         else:
             self.__data = value
 
