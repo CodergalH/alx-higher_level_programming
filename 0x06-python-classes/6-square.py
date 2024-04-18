@@ -29,12 +29,12 @@ class Square(object):
         self._Square__size = value
 
     @property
-    def position(self):
+    def Square__position(self):
         """Gets the position of spaces on square"""
         return self._Square__position
     
-    @position.setter
-    def position(self, value):
+    @Square__position.setter
+    def Square__position(self, value):
         if isinstance(value, tuple):
             index = 0
             for a in value:
